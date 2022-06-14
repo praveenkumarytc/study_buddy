@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.study_buddy">
    <application
-        android:label="study_buddy"
+        android:label="Crypto Buddy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

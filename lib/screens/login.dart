@@ -5,7 +5,7 @@ import 'package:study_buddy/screens/home.dart';
 import 'package:study_buddy/services/firebase_services.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -23,16 +23,13 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ClipOval(
-                child: SizedBox.fromSize(
-                  size: Size.fromRadius(100), // Image radius
-                  child:
-                      Image.asset('assets/images/study.png', fit: BoxFit.cover),
-                ),
+              Image.asset(
+                'assets/images/study.png',
+                height: 200,
               ),
-              SizedBox(height: 80),
+              const SizedBox(height: 80),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
+                margin: const EdgeInsets.symmetric(horizontal: 150),
                 child: ElevatedButton(
                   onPressed: () async {
                     await FirebaseServices().signInwithGoogle();
@@ -43,6 +40,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                   },
                   style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(87.0),
+                            side: const BorderSide(color: Colors.black87))),
                     backgroundColor:
                         MaterialStateProperty.resolveWith((states) {
                       if (states.contains(MaterialState.pressed)) {
@@ -52,26 +53,27 @@ class _LoginScreenState extends State<LoginScreen> {
                     }),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(5),
                     child: Padding(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(7),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Image.asset(
                             "assets/images/google.png",
-                            width: 40,
-                            height: 40,
+                            width: 30,
+                            height: 30,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
                           const Text(
-                            "Login with Gmail",
+                            "Login with google",
                             style: TextStyle(
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24),
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           )
                         ],
                       ),

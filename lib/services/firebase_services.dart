@@ -1,9 +1,13 @@
+// ignore_for_file: avoid_print, use_rethrow_when_possible
+
 import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseServices {
   final _auth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
+  // final database = FirebaseDatabase.instance.ref();
 
   signInwithGoogle() async {
     try {

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:study_buddy/screens/login.dart';
+import 'package:study_buddy/screens/profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,11 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Crypto Buddy',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
-      home: LoginScreen(),
+      home: const LoginScreen(),
     );
   }
 }
