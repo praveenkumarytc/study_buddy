@@ -1,4 +1,4 @@
-# study_buddy
+# crypto_buddy
 
 A new Flutter project.
 
